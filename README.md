@@ -4,11 +4,11 @@ Welcome! This guide provides a walkthrough of essential Docker commands for mana
 
 ## Table of Contents
 
-1.  [Running & Managing a Basic Container](https://www.google.com/search?q=%231-running--managing-a-basic-container)
-2.  [Interacting with a Running Container](https://www.google.com/search?q=%232-interacting-with-a-running-container)
-3.  [Naming and Deleting Resources](https://www.google.com/search?q=%233-naming-and-deleting-resources)
-4.  [Copying Files To/From a Container](https://www.google.com/search?q=%234-copying-files-tofrom-a-container)
-5.  [Example: Running a MySQL Database](https://www.google.com/search?q=%235-example-running-a-mysql-database)
+1.  [Running & Managing a Basic Container]
+2.  [Interacting with a Running Container]
+3.  [Naming and Deleting Resources]
+4.  [Copying Files To/From a Container]
+5.  [Example: Running a MySQL Database]
 
 -----
 
