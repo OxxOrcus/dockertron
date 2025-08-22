@@ -9,6 +9,7 @@ Welcome! This guide provides a walkthrough of essential Docker commands for mana
 3.  [Naming and Deleting Resources]
 4.  [Copying Files To/From a Container]
 5.  [Example: Running a MySQL Database]
+6.  [Example: Running a Web Server with Docker Compose]
 
 -----
 
@@ -237,3 +238,39 @@ docker inspect mysql-A
           * **Value**: `Senha123`
       * **Volumes (Recommended)**: To save your data, map a volume. You can create a named volume or bind-mount a folder from your computer to `/var/lib/mysql` in the container.
 3.  Click **Run**. Your MySQL container will start. You can now connect to it from any database tool on your computer at `localhost:3306`.
+
+-----
+
+## 6. Example: Running a Web Server with Docker Compose
+
+Docker Compose is a tool for defining and running multi-container Docker applications. With a single command, you can start all the services defined in a `docker-compose.yml` file. This project includes a pre-configured file to run a simple Apache web server.
+
+### Command Line (CLI) ⌨️
+
+```bash
+# Start the Apache web server in the background.
+# This command will automatically pull the httpd image if you don't have it.
+sudo docker compose up -d
+
+# To check the status of your running services
+sudo docker compose ps
+
+# To view the logs from the web server
+sudo docker compose logs
+
+# To stop and remove the containers defined in the compose file
+sudo docker compose down
+```
+
+### Description
+
+  * **`docker compose up -d`**: This command reads the `docker-compose.yml` file in the current directory, creates the defined services (in this case, an Apache server), and runs them in detached mode (`-d`).
+  * The `docker-compose.yml` file in this repository is configured to:
+      * Use the latest `httpd` (Apache) image.
+      * Map port 80 on your host machine to port 80 in the container, so you can access the website at `http://localhost`.
+      * Mount the local `./website` directory into the container's web root, so any changes you make to the files are reflected live.
+
+### Tips ✨
+
+  * **Accessing the Website**: Once the container is running, open a web browser and navigate to `http://localhost`. You should see the sample web page.
+  * **No `sudo`?**: If you encounter permission errors when running `docker` commands, it's common to prefix them with `sudo`. Depending on your system's Docker setup, you might be able to run them without `sudo` if your user is part of the `docker` group.
